@@ -87,37 +87,3 @@ terminal continua compatível com seus desafios existentes.
 *   O script só avança se a resposta do puzzle estiver correta (em caso de erro, gera um novo puzzle ou exige que tente novamente).
 *   Após a resolução, o script gera o **Código de Desativação**.
 *   *Sincronização:* O código gerado no Python e o código esperado no Android devem ser calculados com base na data e hora atual (ex: um hash simples do dia + hora), para que ambos saibam a senha do dia sem precisarem estar na mesma rede Wi-Fi.
-
----
-
-## 5. Prompt Base para Geração de Código
-
-Quando for iniciar o desenvolvimento com a Inteligência Artificial (ChatGPT, Gemini, etc.), copie e cole o texto abaixo para obter a estrutura inicial do código:
-
-> **PROMPT PARA A IA:**
-> 
-> Atue como um Desenvolvedor Mobile (Android com Kotlin) e um Desenvolvedor Python Sênior. Quero criar um sistema de alarme "hardcore" para mim, composto por um aplicativo Android e um script Python para o meu Desktop.
-> 
-> **Objetivo:** O alarme só pode ser desligado se eu levantar, for até o PC, rodar um script que exibe um puzzle aleatório, resolvê-lo e obter um código de desativação para digitar no celular.
-> 
-> **Requisitos do Aplicativo Android (Kotlin):**
-> 1. **Comunicação/Desativação:** O app deve ter uma interface simples para definir a hora do alarme e um campo para digitar o código de desativação gerado pelo PC.
-> 2. **Punição Sonora:** O alarme começa com um toque normal. Se não for desativado com o código em 3 minutos, ele deve trocar para um arquivo de áudio extremamente irritante/alto.
-> 3. **Bloqueio de Volume:** O app deve usar o `AudioManager` para travar o volume do alarme e da mídia no nível máximo assim que disparar. Se o usuário tentar abaixar pelos botões físicos, o app deve forçar o volume de volta para 100%.
-> 4. **Prevenção de Desligamento:** O app deve usar a permissão de sobreposição de tela (`SYSTEM_ALERT_WINDOW` e modo tela cheia imersivo) para ficar sempre no topo, dificultando o acesso ao menu de desligamento do sistema.
-> 5. **Prevenção de Desinstalação:** O app deve solicitar permissão de "Administrador do Dispositivo" (Device Policy Manager) na primeira execução, para que o usuário não consiga desinstalar o app facilmente enquanto o alarme toca.
-> 
-> **Requisitos do Script Desktop (Python):**
-> 1. Um script simples que eu possa executar no meu computador.
-> 2. Quando aberto, ele deve gerar um puzzle aleatório (por exemplo, um anagrama, uma equação matemática de nível médio ou uma sequência lógica).
-> 3. Somente após eu digitar a resposta correta no terminal do PC, o script deve imprimir na tela um "Código de Desativação" (ex: um PIN de 4 a 6 dígitos). Use uma lógica de geração de PIN baseada no dia/hora (Seed) para que o Python e o Kotlin gerem a mesma senha sem precisarem estar conectados à mesma rede.
-> 
-> Por favor, me forneça o passo a passo da arquitetura do projeto no Android Studio, os arquivos de configuração (Manifest) essenciais, os códigos Kotlin (focando nas permissões de Administrador, bloqueio de volume e tela cheia) e o script completo em Python. Divida a resposta em etapas lógicas para eu implementar aos poucos.
-
----
-
-## 6. Próximos Passos (Setup de Ambiente)
-1.  Instalar o **Android Studio** para desenvolvimento do app mobile.
-2.  Instalar o **Python 3.x** no computador.
-3.  Criar a estrutura de pastas do projeto (ex: `/alarme_hardcore/mobile` e `/alarme_hardcore/desktop`).
-4.  Iniciar as interações com a IA usando o prompt acima.
