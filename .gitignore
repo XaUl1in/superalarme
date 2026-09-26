@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.venv/
+desktop/config.json
+desktop/streak.json
+mobile/.gradle/
+mobile/.gradle-user/
+mobile/.android/
+mobile/.android-user/
+mobile/.idea/
+mobile/local.properties
+**/build/
+*.iml
+.tools/
